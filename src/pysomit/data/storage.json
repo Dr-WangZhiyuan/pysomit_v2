@@ -1,0 +1,39 @@
+{
+  "name": "Hydrogen storage technology selection",
+  "provenance": "Transcribed from GSOMIT_Manuscript.md Table 7 and gsomit_experiments.py (project snapshot, November 16, 2026). The source project compiles literature-informed ACM values and illustrative expert profiles; these inputs are not a separately verified measurement or expert-survey dataset.",
+  "alternatives": ["CGH2", "LH2", "MH", "NH3", "LOHC"],
+  "criteria": [
+    "Gravimetric density (wt% H2)", "Volumetric density (kg H2/m3)",
+    "Storage cost ($/kg H2)", "Round-trip efficiency (%)",
+    "Technology readiness level (1-9)", "Safety (1-5)",
+    "Self-discharge or boil-off resistance (1-5)", "Scalability (1-5)"
+  ],
+  "types": ["max", "max", "min", "max", "max", "max", "max", "max"],
+  "acm": [
+    [5.7, 23, 12, 92, 9, 3, 5, 4],
+    [7.5, 40, 18, 70, 8, 2, 2, 3],
+    [2.0, 100, 25, 85, 6, 5, 5, 2],
+    [17.6, 108, 8, 55, 7, 2, 4, 5],
+    [6.2, 57, 15, 65, 5, 4, 5, 3]
+  ],
+  "lower_bounds": [0, 0, 0, 0, 1, 1, 1, 1],
+  "upper_bounds": [100, null, null, 100, 9, 5, 5, 5],
+  "integer_criteria": [4, 5, 6, 7],
+  "decision_makers": [
+    {
+      "name": "DM1: Safety Engineer", "median_idx": 3,
+      "comparisons": {"0": "1/3", "1": 1, "2": 3, "4": 5, "5": 7, "6": 5, "7": 2},
+      "highest_idx": 5, "lowest_idx": 0, "direct_hl": 5
+    },
+    {
+      "name": "DM2: Process Engineer", "median_idx": 2,
+      "comparisons": {"0": 3, "1": 5, "3": 4, "4": 3, "5": 1, "6": 2, "7": "1/3"},
+      "highest_idx": 1, "lowest_idx": 7, "direct_hl": 4
+    },
+    {
+      "name": "DM3: Logistics Manager", "median_idx": 4,
+      "comparisons": {"0": 2, "1": 3, "2": 7, "3": 1, "5": "1/3", "6": "1/2", "7": 5},
+      "highest_idx": 2, "lowest_idx": 5, "direct_hl": 5
+    }
+  ]
+}

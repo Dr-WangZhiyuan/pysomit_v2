@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pysomit"
+dynamic = ["version"]
+description = "Single and group SOMIT weighting, TOPSIS, and Monte Carlo robustness analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Dr-WangZhiyuan", email = "WANG1399@e.ntu.edu.sg"}]
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+keywords = ["SOMIT", "G-SOMIT", "MCDM", "TOPSIS", "Monte Carlo"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "ruff>=0.9", "build>=1"]
+examples = ["pandas>=2", "matplotlib>=3.7", "nbconvert>=7", "nbformat>=5.7", "ipykernel>=6"]
+
+[project.urls]
+Repository = "https://github.com/Dr-WangZhiyuan/pysomit_v2"
+Issues = "https://github.com/Dr-WangZhiyuan/pysomit_v2/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "pysomit._version.__version__"}
+
+[tool.setuptools.package-data]
+pysomit = ["py.typed", "data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = ["error"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

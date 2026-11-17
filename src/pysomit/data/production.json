@@ -1,0 +1,45 @@
+{
+  "name": "Green hydrogen production technology selection",
+  "provenance": "Transcribed from GSOMIT_Manuscript.md Tables 2 and 3 and gsomit_experiments.py (project snapshot, November 16, 2026). The source project compiles literature-informed ACM values and illustrative expert profiles; these inputs are not a separately verified measurement or expert-survey dataset.",
+  "alternatives": ["AWE", "PEM", "SOEC", "BG", "STWS"],
+  "criteria": [
+    "Capital cost ($/kW)", "Levelized cost of hydrogen ($/kg H2)",
+    "Energy efficiency (%)", "Technology readiness level (1-9)",
+    "GHG emissions (kg CO2-eq/kg H2)", "Water consumption (L/kg H2)",
+    "System lifetime (years)", "Hydrogen purity (%)",
+    "Dynamic response (1-5)", "Scalability (1-5)"
+  ],
+  "types": ["min", "min", "max", "max", "min", "min", "max", "max", "max", "max"],
+  "acm": [
+    [850, 4.2, 65, 9, 1.8, 10, 25, 99.5, 2, 5],
+    [1200, 5.1, 60, 8, 2.2, 9.5, 18, 99.99, 5, 4],
+    [2800, 4.5, 85, 5, 2.8, 7.5, 8, 99.9, 2, 2],
+    [2100, 3.5, 42, 6, 8.5, 20, 20, 95.0, 1, 3],
+    [5500, 7.8, 25, 3, 0.8, 6.0, 12, 99.5, 1, 1]
+  ],
+  "lower_bounds": [0, 0, 0, 1, 0, 0, 0, 0, 1, 1],
+  "upper_bounds": [null, null, 100, 9, null, null, null, 100, 5, 5],
+  "integer_criteria": [3, 8, 9],
+  "decision_makers": [
+    {
+      "name": "DM1: Energy Policy Expert", "median_idx": 6,
+      "comparisons": {"0": 5, "1": 7, "2": 3, "3": 4, "4": 1, "5": "1/3", "7": "1/2", "8": "1/3", "9": 4},
+      "highest_idx": 1, "lowest_idx": 5, "direct_hl": 5
+    },
+    {
+      "name": "DM2: Chemical Engineer", "median_idx": 0,
+      "comparisons": {"1": 3, "2": 5, "3": 4, "4": "1/3", "5": "1/2", "6": "1/2", "7": 3, "8": "1/3", "9": 2},
+      "highest_idx": 2, "lowest_idx": 4, "direct_hl": 4
+    },
+    {
+      "name": "DM3: Environmental Scientist", "median_idx": 3,
+      "comparisons": {"0": "1/2", "1": 1, "2": 3, "4": 7, "5": 5, "6": 2, "7": "1/2", "8": "1/3", "9": 1},
+      "highest_idx": 4, "lowest_idx": 8, "direct_hl": 6
+    },
+    {
+      "name": "DM4: Energy Economist", "median_idx": 2,
+      "comparisons": {"0": 5, "1": 7, "3": 3, "4": "1/2", "5": "1/3", "6": 4, "7": "1/3", "8": "1/5", "9": 4},
+      "highest_idx": 1, "lowest_idx": 8, "direct_hl": 6
+    }
+  ]
+}
